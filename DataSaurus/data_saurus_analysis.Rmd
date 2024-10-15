@@ -1,0 +1,53 @@
+---
+title: "DataSaurus"
+author: "Paul Astudillo"
+date: "2024-10-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introducción
+
+El conjunto de datos DataSaurus es un famoso ejemplo que ilustra la importancia de visualizar los datos antes de realizar cualquier análisis estadístico. A pesar de que diferentes grupos dentro del conjunto de datos tienen estadísticas como la media, desviación estándar y correlación similares, las visualizaciones de estos grupos muestran distribuciones completamente diferentes. En este análisis, utilizamos el paquete datasauRus para explorar el conjunto de datos DataSaurus mediante estadísticas descriptivas y gráficos de dispersión .
+
+## Cargamos las librerías
+
+```{r}
+# Cargamos las librerías necesarias para el análisis
+library(datasauRus)  # Dataset DataSaurus
+library(dplyr)       # Herramientas para manipular datos
+library(ggplot2)     # Crear gráficos
+
+```
+
+## Análisis estadístico del dataset DataSaurus
+
+```{r}
+# Agrupamos los datos por dataset y calculamos estadísticas básicas:
+# media, desviación estándar y correlación entre x e y.
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(
+    mean_x = mean(x),            # Media de la columna 'x'
+    mean_y = mean(y),            # Media de la columna 'y'
+    std_dev_x = sd(x),           # Desviación estándar de 'x'
+    std_dev_y = sd(y),           # Desviación estándar de 'y'
+    corr_x_y = cor(x, y)         # Correlación entre 'x' y 'y'
+  )
+
+```
+
+## Gráfico de todos los datasets
+
+```{r}
+# Creamos un gráfico de dispersión para todos los datasets
+ggplot(datasaurus_dozen , aes(x=x , y=y , colour=dataset)) +
+  geom_point() +                 # Dibujamos los puntos del gráfico
+  theme_void() +                 # Eliminamos ejes y fondo
+  theme(legend.position = "none") +  # Quitamos la leyenda
+  facet_wrap(~dataset, ncol = 4)     # Dividimos en subgráficos por dataset
+
+```

@@ -1,0 +1,44 @@
+---
+title: "Regresión Lineal con ggplot usando el método lm: Slant Up"
+author: "Paul Astudillo"
+date: "2024-10-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Introducción
+En este análisis, utilizamos el conjunto de datos "slant_up" del paquete datasauRus, que forma parte de una colección conocida como DataSaurus. Esta colección contiene diferentes datasets que, a pesar de tener estadísticas similares, presentan patrones visuales muy variados. Esto demuestra la importancia de visualizar los datos, ya que la representación gráfica puede revelar información que no es evidente a partir de estadísticas descriptivas.
+
+En esta sección, primero cargamos las librerías necesarias, incluyendo ggplot2 para la visualización de datos y dplyr para el manejo de datos. ggplot es una herramienta muy útil porque permite crear gráficos de manera sencilla y flexible, facilitando el análisis visual de las relaciones entre variables. Posteriormente, filtramos el conjunto de datos para centrarnos en "slant_up". A continuación, generamos un gráfico de dispersión que muestra la relación entre las variables x e y, y añadimos una línea de regresión lineal utilizando el método lm. Este método es muy básico y se utiliza comúnmente para modelar la relación entre dos variables cuantitativas. Este análisis nos ayudará a entender mejor la relación entre las variables en este dataset específico.
+
+
+## Cargar las librerías necesarias
+
+```{r}
+library(datasauRus)
+library(ggplot2)
+library(dplyr)
+```
+
+##  Análisis del dataset slant_up
+
+```{r}
+# Filtrar el dataset 'slant_up'
+slant_up_data <- datasaurus_dozen %>% filter(dataset == "slant_up")
+```
+
+## Gráfico de dispersión con ajuste de regresión lineal
+```{r}
+# Gráfico de dispersión con línea de regresión
+ggplot(slant_up_data, aes(x = x, y = y)) +
+  geom_point(color = "blue") + # Puntos en azul
+  geom_smooth(method = "lm", se = FALSE, color = "red") + # Línea de regresión en rojo
+  labs(title = "Regresión Lineal - Slant Up", x = "X", y = "Y") + # Etiquetas del gráfico
+  theme_minimal() # Tema minimalista
+
+```
+
