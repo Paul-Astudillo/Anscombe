@@ -1,39 +1,43 @@
-# Universidad Politécnica Salesiana  
-## Carrera: Computacion
-## Período: P65
-## Estudiante: Paul Astudillo
+# UNIVERSIDAD POLITÉCNICA SALESIANA
+![Universidad Politécnica Salesiana](https://github.com/vlarobbyk/fundamentos-vision-artificial-doctoradoCC/blob/main/images/Logo-UPS-30-Años.png?raw=true)
 
-## Cuarteto de Anscombe
+**Carrera**: Computación  
+**Período**: 65  
+**Estudiante**: Apual Astudillo  
 
-El cuarteto de Anscombe es un conjunto de cuatro datasets que tienen propiedades estadísticas casi idénticas, como la media, la varianza, la correlación y la ecuación de regresión lineal, pero cuando se grafican, muestran patrones de distribución muy diferentes. Este ejemplo resalta la importancia de visualizar los datos antes de sacar conclusiones estadísticas.
+## El Cuarteto de Anscombe
+
+El **Cuarteto de Anscombe** es un conjunto de datos compuesto por cuatro grupos, ideados en 1973 por el estadístico británico Francis Anscombe, con el objetivo de demostrar la importancia de la **visualización** en el análisis de datos. Los cuatro grupos (I, II, III, IV) tienen propiedades estadísticas muy similares, pero con patrones gráficos radicalmente distintos. A nivel numérico, los cuatro conjuntos comparten:
+
+- Media de `x` e `y` prácticamente iguales.
+- Varianza similar en ambos ejes.
+- Una correlación entre las variables `x` e `y` que es prácticamente idéntica en los cuatro casos.
+- La misma ecuación de la línea de regresión lineal.
+
+Sin embargo, al graficar estos conjuntos de datos, se revelan patrones completamente diferentes. Este fenómeno destaca la importancia de la visualización para evitar interpretaciones engañosas basadas únicamente en los valores estadísticos, mostrando que los números por sí solos no cuentan toda la historia.
+
+## Dataset Datasaurus
+
+El **Datasaurus**, creado por Alberto Cairo y popularizado en 2017 por Justin Matejka y George Fitzmaurice, es otro ejemplo que resalta la importancia de visualizar los datos. Aunque las estadísticas descriptivas del Datasaurus (como la media y la varianza) son similares a otros conjuntos de datos, al graficarlo se revela una imagen inesperada: un dinosaurio. Esto demuestra cómo diferentes distribuciones de puntos pueden dar lugar a formas visuales únicas que las estadísticas numéricas no pueden captar.
+
+### Datasaurus Dozen
+
+El **Datasaurus Dozen** es una extensión de este concepto. Consiste en una serie de 13 conjuntos de datos que, a pesar de tener estadísticas descriptivas casi idénticas, generan formas visualmente distintas cuando se grafican, como círculos, estrellas, líneas o figuras abstractas. Este conjunto de datos refuerza la lección de que las estadísticas no son suficientes y que la visualización es una herramienta esencial para un análisis exhaustivo y preciso de los datos.
 
 ---
 
-## Estructura del repositorio
+### Estructura del Repositorio:
 
-Este repositorio está organizado de la siguiente manera:
+1. **README.md**: Este archivo con la explicación de los conceptos clave.
+2. **data/**: Directorio que contiene todos los conjuntos de datos utilizados en la práctica, incluyendo los del cuarteto de Anscombe y el Datasaurus Dozen.
+3. **anscombe/**: Contiene el código fuente del cuaderno de Jupyter con las siguientes secciones:
+   - Carga de los datasets.
+   - Resúmenes estadísticos.
+   - Gráficos de los cuatro conjuntos de datos.
+   - Box plots correspondientes a cada grupo.
+   - Código documentado en Markdown o comentarios.
+4. **DataSaurus/**: Contiene el archivo `.rmd` con el análisis del dataset Datasaurus Dozen y el resultado en formato HTML.
+5. **Herramienta de Regresión**: Directorio que incluye el código y la gráfica de la regresión lineal sobre el dataset seleccionado del Datasaurus.
 
-### 1. **Directorio `data`** (2 pts)
-   Contiene todos los datasets utilizados para la práctica:
-   - Los datasets del cuarteto de Anscombe.
-   - Los datasets del conjunto **DataSaurus** (13 conjuntos de datos).
+---
 
-### 2. **Directorio `anscombe`** (4 pts)
-   En este directorio se encuentra el análisis del cuarteto de Anscombe:
-   - Un libro de Jupyter que contiene el código fuente.
-   - Un archivo en formato HTML con los resultados del análisis que incluye:
-     - Carga de los datasets.
-     - Resúmenes estadísticos.
-     - Gráficas de los conjuntos de datos.
-     - Box-plots de cada grupo.
-   El código está documentado con celdas Markdown y comentarios explicativos.
-
-### 3. **Directorio `DataSaurus`** (4 pts)
-   Aquí se encuentra el análisis del dataset **DataSaurus** (13 conjuntos de datos):
-   - Archivo `.rmd` utilizado para el análisis.
-   - Resultado en formato HTML del archivo `.rmd`.
-
-### 4. **Directorio de la herramienta utilizada para la regresión lineal** (3 pts)
-   Este directorio contiene el análisis de regresión lineal:
-   - Código que genera la gráfica de regresión basado en el dataset seleccionado del conjunto **DataSaurus**.
-   - El nombre del directorio corresponde a la herramienta utilizada (e.g., `R`, `Python`).
