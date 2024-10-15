@@ -1,5 +1,5 @@
 ---
-title: "Regresión Lineal con ggplot usando el método lm: Slant Up"
+title: "Regresión Lineal con ggplot2 usando el método lm: Slant Up"
 author: "Paul Astudillo"
 date: "2024-10-08"
 output: html_document
