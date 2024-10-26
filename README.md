@@ -3,7 +3,7 @@
 
 **Carrera**: Computación  
 **Período**: 65  
-**Estudiante**: Apual Astudillo  
+**Estudiante**: Paul Astudillo 
 
 ## El Cuarteto de Anscombe
 
